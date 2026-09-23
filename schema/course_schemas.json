@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Course",
+      "name": "Drawing & Pencil Sketching Course in Hyderabad",
+      "description": "Comprehensive drawing program covering freehand sketching, line control, light-and-shade, portraiture, landscapes, and still life for children, teens, and adults.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "Certificate / Diploma in Fine Arts",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "courseWorkload": "PT2H / Week",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Watercolor Painting Mastery Course",
+      "description": "Learn professional watercolor techniques including wet-on-wet, dry brush, glazing, color theory, gradient washes, and landscape composition.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "Chitran Certified Watercolor Artist",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "courseWorkload": "PT2H / Week",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Electronic Keyboard & Western Piano Course",
+      "description": "Structured keyboard training covering staff notation, hand synchronization, scale & chord progressions, Western classical, and popular film melodies with Trinity exam preparation.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "Chitran Music Certification & Trinity Exam Coaching",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "courseWorkload": "PT2H / Week",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Acoustic & Electric Guitar Course",
+      "description": "Hands-on guitar lessons covering open chords, barre chords, fingerstyle picking, scales, tabs reading, strumming dynamics, and rhythm lead.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "Chitran Certified Guitarist",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "courseWorkload": "PT2H / Week",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Carnatic Vocal & Devotional Slokas Course",
+      "description": "Authentic classical vocal music training covering Sarali Varisai, Janta Varisai, Alankaras, Geethams, Varnams, Kritis, and Sanskrit sloka recitation.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "Carnatic Vocal Certification",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "courseWorkload": "PT2H / Week",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Handwriting Improvement Program (English & Hindi)",
+      "description": "Scientific handwriting program designed to fix pencil grip, posture, letter spacing, alignment, and writing speed in both print and cursive styles.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "Handwriting Mastery Certificate",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "Onsite",
+        "courseWorkload": "PT1H / Day (Crash Course & Regular Batches)",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    },
+    {
+      "@type": "Course",
+      "name": "Abacus Mental Arithmetic Course (8 Levels)",
+      "description": "Brain development and mental calculation program using the Japanese Soroban Abacus to enhance concentration, visualization, and rapid arithmetic speed.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Chitran Institute",
+        "sameAs": "https://chitraninstitute.com/"
+      },
+      "educationalCredentialAwarded": "8-Level Abacus Completion Certificate",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": ["Onsite", "Online"],
+        "courseWorkload": "PT2H / Week",
+        "location": "Chitran Institute, Ashok Nagar, Himayatnagar, Hyderabad"
+      }
+    }
+  ]
+}

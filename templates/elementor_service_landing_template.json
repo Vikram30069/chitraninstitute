@@ -1,0 +1,337 @@
+{
+  "version": "0.4",
+  "title": "Chitran Institute - High Converting SEO Service Landing Page",
+  "type": "page",
+  "content": [
+    {
+      "id": "hero_section",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "background_background": "gradient",
+        "background_color": "#0d1b2a",
+        "background_color_b": "#1b263b",
+        "background_gradient_angle": { "unit": "deg", "size": 135 },
+        "padding": { "unit": "px", "top": "90", "right": "20", "bottom": "90", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "hero_column",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "hero_badge",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "✨ HYDERABAD'S PREMIER ART & MUSIC ACADEMY SINCE 2003 | MSME CERTIFIED",
+                "header_size": "h6",
+                "align": "center",
+                "title_color": "#e0a96d"
+              }
+            },
+            {
+              "id": "hero_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Professional Drawing, Music & Dance Classes in Hyderabad",
+                "header_size": "h1",
+                "align": "center",
+                "title_color": "#ffffff"
+              }
+            },
+            {
+              "id": "hero_description",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style='text-align: center; color: #e0e1dd; font-size: 18px; max-width: 800px; margin: 0 auto;'>Join over 5,000+ students and budding artists. Learn drawing, painting, piano, guitar, drums, dance, handwriting and abacus from award-winning mentors. Offline batches at Ashok Nagar + Live interactive online classes globally.</p>",
+                "align": "center"
+              }
+            },
+            {
+              "id": "hero_cta_btn",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Book a Free Assessment / Trial Class",
+                "link": { "url": "https://chitraninstitute.com/contact/" },
+                "align": "center",
+                "button_type": "success",
+                "size": "lg"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trust_badges_section",
+      "elType": "section",
+      "settings": {
+        "background_color": "#f8f9fa",
+        "padding": { "unit": "px", "top": "40", "right": "20", "bottom": "40", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "badge_col_1",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "icon_box_1",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "icon": { "value": "fas fa-award", "library": "fa-solid" },
+                "title_text": "20+ Years Legacy",
+                "description_text": "Nurturing creative talent in Hyderabad since 2003."
+              }
+            }
+          ]
+        },
+        {
+          "id": "badge_col_2",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "icon_box_2",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "icon": { "value": "fas fa-certificate", "library": "fa-solid" },
+                "title_text": "MSME Certified",
+                "description_text": "Government of India recognized curriculum."
+              }
+            }
+          ]
+        },
+        {
+          "id": "badge_col_3",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "icon_box_3",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "icon": { "value": "fas fa-trophy", "library": "fa-solid" },
+                "title_text": "National Art Winners",
+                "description_text": "Consistent top honors in National Competitions."
+              }
+            }
+          ]
+        },
+        {
+          "id": "badge_col_4",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "icon_box_4",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "icon": { "value": "fas fa-globe", "library": "fa-solid" },
+                "title_text": "Global Online Classes",
+                "description_text": "Live interactive training across USA, UK & Australia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "curriculum_section",
+      "elType": "section",
+      "settings": {
+        "padding": { "unit": "px", "top": "70", "right": "20", "bottom": "70", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "curriculum_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "curriculum_heading",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Comprehensive Course Curriculum & Levels",
+                "header_size": "h2",
+                "align": "center"
+              }
+            },
+            {
+              "id": "curriculum_accordion",
+              "elType": "widget",
+              "widgetType": "accordion",
+              "settings": {
+                "tabs": [
+                  {
+                    "tab_title": "Level 1: Junior Foundations (Ages 4.5 – 8)",
+                    "tab_content": "Pencil grip control, freehand shapes, color identification, crayons, oil pastels, and basic cartooning."
+                  },
+                  {
+                    "tab_title": "Level 2: Intermediate Mastery (Ages 9 – 15)",
+                    "tab_content": "Pencil shading (2B-8B), light-and-shade, watercolor washes, perspective, landscape sketching, and still life."
+                  },
+                  {
+                    "tab_title": "Level 3: Advanced & Hobbyists (Ages 16+ & Adults)",
+                    "tab_content": "Canvas acrylics, classical oil painting, portrait sketching, palette knife textures, and traditional Tanjore art."
+                  },
+                  {
+                    "tab_title": "Level 4: Fine Arts Diploma & Exam Coaching",
+                    "tab_content": "Prescribed syllabus for Board/University Fine Arts diplomas, theoretical art history, portfolio curation, and mock exams."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testimonials_section",
+      "elType": "section",
+      "settings": {
+        "background_color": "#f1f3f5",
+        "padding": { "unit": "px", "top": "70", "right": "20", "bottom": "70", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "test_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "test_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "What Our Students & Parents Say",
+                "header_size": "h2",
+                "align": "center"
+              }
+            },
+            {
+              "id": "test_box_1",
+              "elType": "widget",
+              "widgetType": "testimonial",
+              "settings": {
+                "testimonial_content": "Our daughter Tripthi takes art classes at Chitran Institute under Raj Kumar Sir and Sujatha Ma'am since 2020. She secured first class with distinction in pre-primary levels and won 1st position in the Nabagitika Painting Competition and a medal in the 5th National Level Painting Competition!",
+                "testimonial_name": "Parents of Tripthi",
+                "testimonial_job": "Student since 2020 (Drawing & Keyboard)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq_section",
+      "elType": "section",
+      "settings": {
+        "padding": { "unit": "px", "top": "70", "right": "20", "bottom": "70", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "faq_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "faq_heading",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Frequently Asked Questions",
+                "header_size": "h2",
+                "align": "center"
+              }
+            },
+            {
+              "id": "faq_accordion",
+              "elType": "widget",
+              "widgetType": "accordion",
+              "settings": {
+                "tabs": [
+                  {
+                    "tab_title": "Where is Chitran Institute located in Hyderabad?",
+                    "tab_content": "We are located at Street Number 10, P & T Colony, Ashok Nagar, Himayatnagar, Hyderabad, Telangana 500020 (near Ashok Nagar Circle)."
+                  },
+                  {
+                    "tab_title": "Do you offer both offline and online classes?",
+                    "tab_content": "Yes, we conduct offline classes at our Ashok Nagar campus and live online interactive classes for students globally across USA, UK, Germany, and Australia."
+                  },
+                  {
+                    "tab_title": "Can beginners join?",
+                    "tab_content": "Yes! Our courses start from foundational basics, accommodating all skill levels and ages from 4.5+ to adults."
+                  },
+                  {
+                    "tab_title": "What are the class timings?",
+                    "tab_content": "We have flexible morning, evening, and weekend batches operating Monday to Saturday (9:00 AM – 8:00 PM) and Sundays (9:00 AM – 2:00 PM)."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta_footer_section",
+      "elType": "section",
+      "settings": {
+        "background_color": "#0d1b2a",
+        "padding": { "unit": "px", "top": "60", "right": "20", "bottom": "60", "left": "20", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "footer_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "footer_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Ready to Start Your Creative Journey?",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#ffffff"
+              }
+            },
+            {
+              "id": "footer_desc",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style='text-align: center; color: #e0e1dd;'>Visit our Ashok Nagar campus or call us at <strong>+91 9866150378 / +91 9291565318</strong></p>",
+                "align": "center"
+              }
+            },
+            {
+              "id": "footer_btn",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Enroll Now / Contact Us",
+                "link": { "url": "https://chitraninstitute.com/contact/" },
+                "align": "center",
+                "button_type": "warning",
+                "size": "lg"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

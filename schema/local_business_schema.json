@@ -1,0 +1,126 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["EducationalOrganization", "LocalBusiness"],
+      "@id": "https://chitraninstitute.com/#organization",
+      "name": "Chitran Institute",
+      "alternateName": ["Chitran Institute of Drawing, Painting, Music & Dance", "Chitran Arts"],
+      "url": "https://chitraninstitute.com/",
+      "logo": "https://chitraninstitute.com/wp-content/uploads/logo.png",
+      "image": "https://chitraninstitute.com/wp-content/uploads/chitran-campus.jpg",
+      "description": "Established in 2003 and MSME certified, Chitran Institute is Hyderabad's premier fine arts, instrumental music, classical dance, and academic skill development academy offering structured training for kids, teens, and adults.",
+      "foundingDate": "2003",
+      "founder": {
+        "@type": "Person",
+        "name": "Mrs. Sujatha Banerjee",
+        "jobTitle": "Principal & Founder"
+      },
+      "telephone": ["+91-9866150378", "+91-9291565318"],
+      "email": "chitrandsp@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Street Number 10, P & T Colony, Ashok Nagar",
+        "addressLocality": "Himayatnagar, Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500020",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "17.4093",
+        "longitude": "78.4983"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/ChitranDrawingSchoolandPainting/",
+        "https://www.instagram.com/chitraninstitute/",
+        "https://www.linkedin.com/company/chitran-institute-of-drawing-painting-music-dance/",
+        "https://www.youtube.com/@chitranarts",
+        "https://www.justdial.com/Hyderabad/Chitran-Institute-Of-Drawing-and-Painting-Music-and-Dance-Near-Ashok-Nagar-Circle-Ashok-Nagar/040PXX40-XX40-100827123648-W3S8_BZDET"
+      ],
+      "priceRange": "₹₹",
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Hyderabad"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ashok Nagar"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Himayatnagar"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Chikkadpally"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Telangana"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Chitran Institute Courses & Programs",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Fine Arts & Painting",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drawing & Pencil Shading" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Watercolor Painting" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acrylic & Oil Painting" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tanjore & Fabric Painting" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fine Arts Diploma & Exam Prep" } }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Instrumental & Vocal Music",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electronic Keyboard & Piano" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acoustic & Lead Guitar" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Drums & Octapad" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Indian Classical Tabla" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Carnatic Vocal & Sloka Chanting" } }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Dance & Movement",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Western & Bollywood Dance" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kuchipudi Classical Dance" } }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Academic & Skill Development",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "English & Hindi Handwriting Improvement" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Artistic Calligraphy" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abacus Mental Arithmetic" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speed Maths & Vedic Arithmetic" } }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

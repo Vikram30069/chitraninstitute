@@ -1,0 +1,17 @@
+# Scratch and temporary testing files
+scratch/
+*.zip
+
+# System and logs
+.system_generated/
+.tempmediaStorage/
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE config
+.vscode/
+.idea/

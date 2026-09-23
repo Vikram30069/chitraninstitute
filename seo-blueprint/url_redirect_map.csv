@@ -1,0 +1,11 @@
+Legacy_Old_URL,New_Target_URL,HTTP_Status,Rationale
+/courses-offered/,/art-classes-hyderabad/,301,Redirect broad old courses page to primary Art & Painting Hub (or /courses/ overview)
+/courses/,/art-classes-hyderabad/,301,Standardize old /courses/ anchor to primary category hub
+/google-form/,/contact/,301,Replace raw external form link with branded interactive contact/enrollment page with embedded form
+/student-achievements/,/student-achievements/,200,Preserve existing indexed URL and enrich with verified certificates & awards
+/recent-achievements/,/student-achievements/,301,Consolidate duplicate achievements pages to avoid keyword cannibalization
+/our-student-works/,/our-student-works/,200,Preserve existing indexed student work showcase URL
+/events/,/summer-camp-workshops/,301,Redirect empty/low-content events page to high-converting summer camp & workshop landing page
+/about/,/about/,200,Preserve existing indexed about page and upgrade schema/entity content
+/gallery/,/gallery/,200,Preserve existing indexed gallery URL
+/contact/,/contact/,200,Preserve existing indexed contact page and eliminate dummy placeholder text

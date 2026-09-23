@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is Chitran Institute located in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chitran Institute is conveniently located at Street Number 10, P & T Colony, Ashok Nagar, Himayatnagar, Hyderabad, Telangana 500020, near Ashok Nagar Circle and easily accessible from Chikkadpally, RTC X Roads, and Narayanaguda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What courses are offered at Chitran Institute?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer structured courses across 4 main faculties: 1) Fine Arts & Painting (Drawing, Pencil Shading, Watercolor, Acrylic, Oil Painting, Tanjore, Fabric & Glass Painting); 2) Music (Keyboard, Piano, Acoustic/Electric Guitar, Drums, Octapad, Tabla, Carnatic Vocal, Slokas); 3) Dance (Western, Bollywood, Hip Hop, Zumba, Kuchipudi); 4) Skill Development (English & Hindi Handwriting Improvement, Calligraphy, Abacus, Speed Maths)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are both offline and online classes available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We conduct interactive offline batches at our Ashok Nagar, Hyderabad campus, as well as live 1-on-1 and small group online classes for students across India, USA, UK, Germany, Australia, and the Middle East."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the minimum age requirement for joining courses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer programs starting from age 4.5+ for drawing, handwriting, and abacus. Music and dance programs are suitable for kids aged 5+, teenagers, and adults of all skill levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do students receive certificates and prepare for exams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Chitran Institute is an MSME-certified institution established in 2003. We award course completion certificates and provide dedicated coaching for state/national Fine Arts diploma exams, Trinity College music exams, and national painting competitions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the class timings and batch options?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We have flexible morning, evening, and weekend batches available throughout the week from 9:00 AM to 8:00 PM (Monday to Saturday) and 9:00 AM to 2:00 PM on Sundays to accommodate school and working schedules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I enroll or book a trial session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact our admissions desk by calling +91 9866150378 or +91 9291565318, messaging us directly on WhatsApp, or visiting our campus in Ashok Nagar, Hyderabad."
+      }
+    }
+  ]
+}

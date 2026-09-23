@@ -1,0 +1,725 @@
+{
+  "version": "0.4",
+  "title": "Chitran Institute - Modern Homepage Redesign (Aarabhi & TalentHub Inspired)",
+  "type": "page",
+  "content": [
+    {
+      "id": "hero_aarabhi_slider_section",
+      "elType": "section",
+      "settings": {
+        "layout": "full_width",
+        "gap": "no",
+        "background_background": "classic",
+        "background_color": "#070B14",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
+      },
+      "elements": [
+        {
+          "id": "hero_aarabhi_slider_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "hero_aarabhi_slides_widget",
+              "elType": "widget",
+              "widgetType": "slides",
+              "settings": {
+                "slides": [
+                  {
+                    "heading": "Mastery on Canvas",
+                    "description": "Preserving the timeless tradition of Indian Fine Arts, authentic 22K Tanjore gold foil, and oil realism since 2003 under Suryachandra Awardee Guru Rajkumar Banerjee.",
+                    "button_text": "EXPLORE FINE ARTS",
+                    "link": { "url": "https://chitraninstitute.com/drawing-painting-classes-hyderabad/" },
+                    "background_color": "#070B14",
+                    "background_overlay": "yes",
+                    "background_overlay_color": "rgba(7, 11, 20, 0.65)"
+                  },
+                  {
+                    "heading": "Symphony of Strings & Keys",
+                    "description": "Witness the breathtaking harmony of over 500+ youth students mastering western staff notation, classical Carnatic ragas, acoustic guitar chords, and stage symphony.",
+                    "button_text": "EXPLORE MUSIC",
+                    "link": { "url": "https://chitraninstitute.com/music-classes-hyderabad/" },
+                    "background_color": "#070B14",
+                    "background_overlay": "yes",
+                    "background_overlay_color": "rgba(7, 11, 20, 0.65)"
+                  },
+                  {
+                    "heading": "Rhythm & Grace in Motion",
+                    "description": "From sacred classical temple mudras and footwork of ancient Kuchipudi to high-voltage contemporary and Bollywood routines. Complete stage training & certified syllabus.",
+                    "button_text": "EXPLORE DANCE",
+                    "link": { "url": "https://chitraninstitute.com/dance-classes-hyderabad/" },
+                    "background_color": "#070B14",
+                    "background_overlay": "yes",
+                    "background_overlay_color": "rgba(7, 11, 20, 0.65)"
+                  },
+                  {
+                    "heading": "The Art of Penmanship",
+                    "description": "Transform handwriting speed, legibility, and pencil grip ergonomics in just one month. Scientifically formulated for school students, teens, and competitive exam aspirants.",
+                    "button_text": "EXPLORE HANDWRITING",
+                    "link": { "url": "https://chitraninstitute.com/handwriting-classes-hyderabad/" },
+                    "background_color": "#070B14",
+                    "background_overlay": "yes",
+                    "background_overlay_color": "rgba(7, 11, 20, 0.65)"
+                  }
+                ],
+                "slides_height": { "unit": "vh", "size": 92 },
+                "navigation": "both",
+                "autoplay": "yes",
+                "autoplay_speed": 5500,
+                "pause_on_hover": "yes",
+                "infinite": "yes",
+                "transition": "fade",
+                "heading_color": "#F5C062",
+                "heading_typography_font_family": "Playfair Display",
+                "heading_typography_font_weight": "700",
+                "description_color": "#E2E8F0",
+                "button_color": "#FFFFFF",
+                "button_background_color": "#8B1E1E",
+                "button_border_radius": { "unit": "px", "top": "50", "right": "50", "bottom": "50", "left": "50" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stats_counter_strip",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "background_background": "classic",
+        "background_color": "#FFFFFF",
+        "padding": {
+          "unit": "px",
+          "top": "40",
+          "right": "20",
+          "bottom": "40",
+          "left": "20",
+          "isLinked": false
+        },
+        "border_border": "solid",
+        "border_width": { "unit": "px", "top": "1", "right": "0", "bottom": "1", "left": "0" },
+        "border_color": "#E2E8F0"
+      },
+      "elements": [
+        {
+          "id": "stat_col_1",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "counter_1",
+              "elType": "widget",
+              "widgetType": "counter",
+              "settings": {
+                "ending_number": 20,
+                "suffix": "+",
+                "title": "Years of Legacy (Est. 2003)",
+                "number_color": "#D97706"
+              }
+            }
+          ]
+        },
+        {
+          "id": "stat_col_2",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "counter_2",
+              "elType": "widget",
+              "widgetType": "counter",
+              "settings": {
+                "ending_number": 5000,
+                "suffix": "+",
+                "title": "Students & Artists Mentored",
+                "number_color": "#D97706"
+              }
+            }
+          ]
+        },
+        {
+          "id": "stat_col_3",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "counter_3",
+              "elType": "widget",
+              "widgetType": "counter",
+              "settings": {
+                "ending_number": 35,
+                "suffix": "+",
+                "title": "Specialized Course Modules",
+                "number_color": "#D97706"
+              }
+            }
+          ]
+        },
+        {
+          "id": "stat_col_4",
+          "elType": "column",
+          "settings": { "_column_size": 25 },
+          "elements": [
+            {
+              "id": "counter_4",
+              "elType": "widget",
+              "widgetType": "counter",
+              "settings": {
+                "ending_number": 100,
+                "suffix": "%",
+                "title": "Practical 1-on-1 Training",
+                "number_color": "#D97706"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disciplines_hub_section",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "background_background": "classic",
+        "background_color": "#FDFBF7",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "courses_header_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "courses_tag",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "ACADEMIC DISCIPLINES",
+                "header_size": "h6",
+                "align": "center",
+                "title_color": "#B45309"
+              }
+            },
+            {
+              "id": "courses_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Nurturing Budding Talents Across Four Creative Pillars",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#0F172A",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display",
+                "typography_font_size": { "unit": "px", "size": 36 }
+              }
+            }
+          ]
+        },
+        {
+          "id": "pillar_row",
+          "elType": "section",
+          "isInner": true,
+          "settings": {
+            "padding": { "unit": "px", "top": "40", "right": "0", "bottom": "0", "left": "0", "isLinked": false }
+          },
+          "elements": [
+            {
+              "id": "card_art",
+              "elType": "column",
+              "settings": {
+                "_column_size": 25,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.06)", "blur": 20, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "icon_art",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-paint-brush",
+                    "title_text": "Drawing & Painting",
+                    "description_text": "Pencil shading, watercolors, acrylics, oil painting on canvas, Tanjore art, fabric painting.",
+                    "primary_color": "#EA580C",
+                    "position": "top"
+                  }
+                },
+                {
+                  "id": "btn_art",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Syllabus →",
+                    "link": { "url": "https://chitraninstitute.com/art-classes-hyderabad/" },
+                    "size": "sm",
+                    "align": "center"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "card_music",
+              "elType": "column",
+              "settings": {
+                "_column_size": 25,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.06)", "blur": 20, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "icon_music",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-music",
+                    "title_text": "Instrumental & Vocal",
+                    "description_text": "Keyboard & piano, acoustic guitar, drums, Octapad, classical tabla, Carnatic vocal and slokas.",
+                    "primary_color": "#4F46E5",
+                    "position": "top"
+                  }
+                },
+                {
+                  "id": "btn_music",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Syllabus →",
+                    "link": { "url": "https://chitraninstitute.com/music-classes-hyderabad/" },
+                    "size": "sm",
+                    "align": "center"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "card_dance",
+              "elType": "column",
+              "settings": {
+                "_column_size": 25,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.06)", "blur": 20, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "icon_dance",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-female",
+                    "title_text": "Dance & Movement",
+                    "description_text": "Western dance, Bollywood choreography, hip-hop, Zumba fitness, and classical Kuchipudi.",
+                    "primary_color": "#E11D48",
+                    "position": "top"
+                  }
+                },
+                {
+                  "id": "btn_dance",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Syllabus →",
+                    "link": { "url": "https://chitraninstitute.com/dance-classes-hyderabad/" },
+                    "size": "sm",
+                    "align": "center"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "card_skills",
+              "elType": "column",
+              "settings": {
+                "_column_size": 25,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.06)", "blur": 20, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "icon_skills",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-pencil",
+                    "title_text": "Handwriting & Abacus",
+                    "description_text": "English & Hindi handwriting improvement, cursive writing, calligraphy, Abacus, Vedic maths.",
+                    "primary_color": "#0D9488",
+                    "position": "top"
+                  }
+                },
+                {
+                  "id": "btn_skills",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Explore Syllabus →",
+                    "link": { "url": "https://chitraninstitute.com/handwriting-classes-hyderabad/" },
+                    "size": "sm",
+                    "align": "center"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "achievements_wall_section",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "background_background": "classic",
+        "background_color": "#F6F3EB",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "achievements_header_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "achievements_tag",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "STUDENT ACCOLADES & HONORS",
+                "header_size": "h6",
+                "align": "center",
+                "title_color": "#B45309"
+              }
+            },
+            {
+              "id": "achievements_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Celebrating Excellence on National & State Stages",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#0F172A",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display"
+              }
+            }
+          ]
+        },
+        {
+          "id": "achievements_row_1",
+          "elType": "section",
+          "isInner": true,
+          "settings": {
+            "padding": { "unit": "px", "top": "30", "right": "0", "bottom": "0", "left": "0", "isLinked": false }
+          },
+          "elements": [
+            {
+              "id": "award_col_1",
+              "elType": "column",
+              "settings": {
+                "_column_size": 33.33,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12" },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "award_box_1",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-trophy",
+                    "title_text": "5th National Painting Competition",
+                    "description_text": "Pondicherry Art Academy Medal Winner distinctions achieved by Chitran Institute students.",
+                    "primary_color": "#D97706"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "award_col_2",
+              "elType": "column",
+              "settings": {
+                "_column_size": 33.33,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12" },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "award_box_2",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-medal",
+                    "title_text": "Bharathiya Charukala Mandir",
+                    "description_text": "1st Position in Nabagitika All-India Group Painting Exhibition across pre-primary and junior categories.",
+                    "primary_color": "#D97706"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "award_col_3",
+              "elType": "column",
+              "settings": {
+                "_column_size": 33.33,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12" },
+                "padding": { "unit": "px", "top": "24", "right": "20", "bottom": "24", "left": "20", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "award_box_3",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "icon": "fa fa-music",
+                    "title_text": "Trinity College London Music Exams",
+                    "description_text": "Graded music exam certifications in Keyboard, Piano, and Classical Vocals with distinction marks.",
+                    "primary_color": "#D97706"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testimonials_section",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "background_background": "classic",
+        "background_color": "#FDFBF7",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "testim_header_col",
+          "elType": "column",
+          "settings": { "_column_size": 100 },
+          "elements": [
+            {
+              "id": "testim_tag",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "PARENT & STUDENT VOICES",
+                "header_size": "h6",
+                "align": "center",
+                "title_color": "#B45309"
+              }
+            },
+            {
+              "id": "testim_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Real Stories of Artistic Transformation",
+                "header_size": "h2",
+                "align": "center",
+                "title_color": "#0F172A",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display"
+              }
+            }
+          ]
+        },
+        {
+          "id": "testim_row",
+          "elType": "section",
+          "isInner": true,
+          "settings": {
+            "padding": { "unit": "px", "top": "30", "right": "0", "bottom": "0", "left": "0", "isLinked": false }
+          },
+          "elements": [
+            {
+              "id": "testim_col_1",
+              "elType": "column",
+              "settings": {
+                "_column_size": 33.33,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.05)", "blur": 15, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "testim_item_1",
+                  "elType": "widget",
+                  "widgetType": "testimonial",
+                  "settings": {
+                    "testimonial_content": "Our daughter Tripthi won 1st position in Nabagitika and a Medal in the 5th National Painting Competition. Now she is also learning Keyboard under Vikram Sir. The patience and warmth of the faculty is unmatched!",
+                    "testimonial_name": "Parents of Tripthi",
+                    "testimonial_job": "Art Medalist & Music Student"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "testim_col_2",
+              "elType": "column",
+              "settings": {
+                "_column_size": 33.33,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.05)", "blur": 15, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "testim_item_2",
+                  "elType": "widget",
+                  "widgetType": "testimonial",
+                  "settings": {
+                    "testimonial_content": "As a professional YouTuber with over 40,000 subscribers, creative excellence is everything to me. Joining Chitran Institute has been a game-changer. The instructors' dedication will take your skills to new heights.",
+                    "testimonial_name": "Shital",
+                    "testimonial_job": "Artist & Content Creator"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "testim_col_3",
+              "elType": "column",
+              "settings": {
+                "_column_size": 33.33,
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_radius": { "unit": "px", "top": "16", "right": "16", "bottom": "16", "left": "16" },
+                "box_shadow_box_shadow": { "color": "rgba(0,0,0,0.05)", "blur": 15, "spread": 0 },
+                "padding": { "unit": "px", "top": "24", "right": "24", "bottom": "24", "left": "24", "isLinked": false }
+              },
+              "elements": [
+                {
+                  "id": "testim_item_3",
+                  "elType": "widget",
+                  "widgetType": "testimonial",
+                  "settings": {
+                    "testimonial_content": "We are deeply grateful for the dedication invested in teaching our son creativity. From his first session he has been captivated. His drumming lessons have helped him grow with immense confidence.",
+                    "testimonial_name": "Parent of Young Learner",
+                    "testimonial_job": "Fine Arts & Drumming Student, Hyderabad"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta_assessment_section",
+      "elType": "section",
+      "settings": {
+        "layout": "boxed",
+        "background_background": "classic",
+        "background_color": "#0F172A",
+        "padding": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "cta_col_text",
+          "elType": "column",
+          "settings": { "_column_size": 60 },
+          "elements": [
+            {
+              "id": "cta_title",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Book a Free 30-Minute Trial Class & Skill Evaluation",
+                "header_size": "h2",
+                "title_color": "#FFFFFF",
+                "typography_typography": "custom",
+                "typography_font_family": "Playfair Display"
+              }
+            },
+            {
+              "id": "cta_desc",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style='color: #CBD5E1; font-size: 16px; line-height: 1.7;'>Meet our award-winning educators, evaluate your child's natural artistic aptitude, and discuss customized batch timings. Available both offline in Ashok Nagar, Hyderabad and live online globally.</p>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cta_col_btn",
+          "elType": "column",
+          "settings": { "_column_size": 40 },
+          "elements": [
+            {
+              "id": "cta_action_btn",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Schedule Free Trial Now →",
+                "link": { "url": "https://chitraninstitute.com/contact/" },
+                "size": "lg",
+                "background_color": "#D97706",
+                "border_radius": { "unit": "px", "top": "30", "right": "30", "bottom": "30", "left": "30" }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
