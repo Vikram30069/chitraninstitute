@@ -14,28 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 2. Mobile Menu Toggle
+  // 2. Mobile Menu Toggle & Navigation
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.querySelector('.nav-menu');
 
   if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('mobile-open');
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('mobile-open');
+      menuToggle.innerHTML = isOpen ? '✕' : '☰';
+      menuToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close mobile menu on click of nav link or dropdown item
-    document.querySelectorAll('.nav-link, .drawing-type-item, .dropdown-sub-link').forEach(link => {
+    // Close mobile menu ONLY on click of direct destination links or sub-links (NOT dropdown triggers)
+    document.querySelectorAll('.nav-link:not(.dropdown-trigger), .drawing-type-item, .dropdown-sub-link').forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 1024) {
           navMenu.classList.remove('mobile-open');
+          menuToggle.innerHTML = '☰';
+          menuToggle.setAttribute('aria-expanded', 'false');
         }
       });
     });
 
-    // On mobile, tap on dropdown trigger toggles dropdown
+    // On mobile, tap on dropdown trigger toggles dropdown accordion without closing menu
     document.querySelectorAll('.nav-item-dropdown .dropdown-trigger').forEach(trigger => {
       trigger.addEventListener('click', (e) => {
         if (window.innerWidth <= 1024) {
           e.preventDefault();
+          e.stopPropagation();
           const parent = trigger.closest('.nav-item-dropdown');
           const isOpen = parent.classList.contains('mobile-dropdown-open');
           document.querySelectorAll('.nav-item-dropdown').forEach(d => d.classList.remove('mobile-dropdown-open'));
@@ -44,6 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       });
+    });
+
+    // Close mobile menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 1024 && navMenu.classList.contains('mobile-open')) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove('mobile-open');
+          menuToggle.innerHTML = '☰';
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
     });
   }
 
@@ -200,9 +218,17 @@ document.addEventListener('DOMContentLoaded', () => {
     disciplineTabs.forEach((tab, i) => {
       if (i === currentSlide) {
         tab.classList.add('active');
-        if (window.innerWidth <= 768 && typeof tab.scrollIntoView === 'function') {
+        // Scroll ONLY the inner horizontal tabs container; NEVER scroll the browser window
+        const tabsContainer = tab.closest('.slider-discipline-tabs');
+        if (tabsContainer && typeof tabsContainer.scrollTo === 'function') {
           try {
-            tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            const tabLeft = tab.offsetLeft;
+            const tabWidth = tab.offsetWidth;
+            const containerWidth = tabsContainer.offsetWidth;
+            tabsContainer.scrollTo({
+              left: tabLeft - (containerWidth / 2) + (tabWidth / 2),
+              behavior: 'smooth'
+            });
           } catch(e) {}
         }
       } else {
