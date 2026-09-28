@@ -3645,25 +3645,28 @@ section[id],
 
   /* Header & Navigation */
   .main-header {
-    padding: 8px 0;
+    padding: 6px 0 2px 0 !important;
     max-width: 100vw !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .nav-container {
     padding: 0 12px !important;
-    height: 64px !important;
+    height: auto !important;
+    min-height: 52px !important;
     display: flex !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
     justify-content: space-between !important;
     max-width: 100% !important;
     width: 100% !important;
+    row-gap: 6px !important;
   }
 
   .brand-logo {
+    order: 1 !important;
     gap: 8px;
-    max-width: calc(100% - 130px) !important;
-    overflow: hidden !important;
+    max-width: calc(100% - 60px) !important;
     flex-shrink: 1 !important;
   }
 
@@ -3699,6 +3702,7 @@ section[id],
   }
 
   .nav-actions {
+    order: 2 !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
@@ -3706,26 +3710,23 @@ section[id],
   }
 
   .nav-actions .btn-primary {
-    display: none !important; /* Hide bulky "Book Free Trial" in mobile header - it's already in sticky dock */
+    display: none !important; /* Hide bulky "Book Free Trial" in mobile top header - it is in sticky dock */
   }
 
-  .btn-nav-call,
-  .btn-whatsapp {
-    padding: 7px 10px !important;
-    font-size: 0.78rem !important;
-    min-height: 38px !important;
-    border-radius: var(--radius-full) !important;
+  .nav-search-wrapper {
+    order: 3 !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    margin: 4px 0 2px 0 !important;
   }
 
-  .btn-nav-call svg,
-  .btn-whatsapp svg {
-    width: 16px !important;
-    height: 16px !important;
-  }
-
-  .btn-nav-call span,
-  .btn-whatsapp span {
-    display: none !important; /* Icons only on phone header to keep compact and prevent overflow */
+  .mobile-nav-strip {
+    order: 4 !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 4px 0 2px 0 !important;
+    padding: 4px 0 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
   .mobile-toggle {
