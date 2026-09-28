@@ -830,6 +830,11 @@ button {
   color: #FFFFFF;
 }
 
+/* Mobile Quick Navigation Strip - STRICTLY HIDDEN ON DESKTOP & LAPTOPS */
+.mobile-nav-strip {
+  display: none !important;
+}
+
 /* ==========================================================================
    AARABHI-INSPIRED FULL-BLEED CINEMATIC HERO SLIDER
    ========================================================================== */
@@ -6728,11 +6733,6 @@ section[id],
   }
   .google-reviews-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Mobile Quick Navigation Strip (Horizontal Category Pills) */
-  .mobile-nav-strip {
-    display: none;
   }
 
   /* Mobile Navigation & Categories Dropdown */
