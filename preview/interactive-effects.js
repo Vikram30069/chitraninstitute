@@ -307,62 +307,10 @@
 
     if (typeof ScrollTrigger === 'undefined') return;
 
-    // B. Staggered Entrance Reveal for Discipline Cards
-    const disciplineGrid = document.querySelector('.disciplines-grid');
-    if (disciplineGrid) {
-      const cards = disciplineGrid.querySelectorAll('.discipline-card');
-      if (cards.length > 0) {
-        gsap.from(cards, {
-          y: 40,
-          opacity: 0,
-          duration: 0.85,
-          stagger: 0.12,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: disciplineGrid,
-            start: 'top 82%',
-            toggleActions: 'play none none none'
-          }
-        });
-      }
-    }
-
-    // C. Section Header Refined Fade & Rise
-    const sectionHeaders = document.querySelectorAll('.section-header');
-    sectionHeaders.forEach((hdr) => {
-      gsap.from(hdr, {
-        y: 28,
-        opacity: 0,
-        duration: 0.75,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: hdr,
-          start: 'top 86%',
-          toggleActions: 'play none none none'
-        }
-      });
+    // Refresh ScrollTrigger to ensure accurate layout tracking
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
     });
-
-    // D. Google Scoreboard & Reviews Stagger Reveal
-    const reviewsGrid = document.querySelector('.google-reviews-grid');
-    if (reviewsGrid) {
-      const rCards = reviewsGrid.querySelectorAll('.google-review-card');
-      if (rCards.length > 0) {
-        gsap.from(rCards, {
-          y: 35,
-          opacity: 0,
-          scale: 0.98,
-          duration: 0.75,
-          stagger: 0.1,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: reviewsGrid,
-            start: 'top 84%',
-            toggleActions: 'play none none none'
-          }
-        });
-      }
-    }
 
     // E. Kala Chakra Visual Subtle Scroll Parallax on Desktop
     const chakraWheel = document.querySelector('.kala-chakra-wheel, .chakra-disc-svg');
