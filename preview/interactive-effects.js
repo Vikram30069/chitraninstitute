@@ -1,0 +1,424 @@
+/**
+ * ============================================================================
+ * CHITRAN INSTITUTE — CREATIVE TECH LAYER
+ * Integrations:
+ * 1. Lenis (Awwwards-Tier Desktop Inertia Smooth Scroll)
+ * 2. GSAP + ScrollTrigger (Scroll-driven reveals, milestone countups & parallax)
+ * 3. Three.js (Luminous 3D Gold Dust / Art Pigment Constellation in Hero)
+ * 
+ * Safe by design: Zero layout shift, 100% native mobile touch preservation,
+ * and automatic 0% GPU pause when hero is scrolled out of view.
+ * ============================================================================
+ */
+
+(function () {
+  'use strict';
+
+  // Device & capabilities detection
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isDesktop = window.innerWidth >= 1024 && !isTouchDevice;
+
+  /* --------------------------------------------------------------------------
+     1. LENIS SMOOTH INERTIAL SCROLL (Desktop Only)
+     -------------------------------------------------------------------------- */
+  function initLenis() {
+    if (!isDesktop || typeof Lenis === 'undefined') return;
+
+    try {
+      const lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential ease-out
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 0.95,
+        smoothTouch: false, // Strictly false: native momentum on touch screens
+        touchMultiplier: 1.0,
+        infinite: false
+      });
+
+      // Synchronize Lenis with GSAP ScrollTrigger if present
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+
+      window.chitranLenis = lenis;
+
+      // Smooth anchor scrolling (#hero, #booking, etc.)
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href && href.length > 1 && !this.getAttribute('onclick')) {
+            const targetEl = document.querySelector(href);
+            if (targetEl) {
+              e.preventDefault();
+              lenis.scrollTo(targetEl, { offset: -70, duration: 1.3 });
+            }
+          }
+        });
+      });
+    } catch (err) {
+      console.warn('Lenis init failed, fallback to native scrolling', err);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     2. THREE.JS 3D GOLD DUST & CELESTIAL PARTICLES (Hero Section)
+     -------------------------------------------------------------------------- */
+  function initThreeHero() {
+    const heroSection = document.getElementById('hero') || document.querySelector('.aarabhi-hero-slider');
+    if (!heroSection || typeof THREE === 'undefined') return;
+
+    try {
+      // Create dedicated overlay canvas
+      let canvas = document.getElementById('heroThreeCanvas');
+      if (!canvas) {
+        canvas = document.createElement('canvas');
+        canvas.id = 'heroThreeCanvas';
+        canvas.className = 'hero-three-canvas';
+        heroSection.insertBefore(canvas, heroSection.firstChild);
+      }
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, heroSection.offsetWidth / heroSection.offsetHeight, 0.1, 1000);
+      camera.position.z = 180;
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: true,
+        powerPreference: 'low-power'
+      });
+      renderer.setSize(heroSection.offsetWidth, heroSection.offsetHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Generate a soft radial gold particle texture programmatically
+      function createGoldGlowTexture() {
+        const size = 64;
+        const pCanvas = document.createElement('canvas');
+        pCanvas.width = size;
+        pCanvas.height = size;
+        const ctx = pCanvas.getContext('2d');
+
+        const gradient = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+        gradient.addColorStop(0, 'rgba(255, 235, 175, 1)');
+        gradient.addColorStop(0.25, 'rgba(245, 192, 98, 0.85)');
+        gradient.addColorStop(0.55, 'rgba(217, 119, 6, 0.35)');
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, size, size);
+
+        const texture = new THREE.CanvasTexture(pCanvas);
+        texture.needsUpdate = true;
+        return texture;
+      }
+
+      // Particle Geometry & Attributes
+      const particleCount = isDesktop ? 140 : 60;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const scales = new Float32Array(particleCount);
+      const velocities = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        // Spread particles across a wide 3D prism
+        positions[i * 3] = (Math.random() - 0.5) * 450;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 280;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 250;
+
+        scales[i] = Math.random() * 0.8 + 0.4;
+
+        velocities.push({
+          x: (Math.random() - 0.5) * 0.08,
+          y: Math.random() * 0.12 + 0.04, // subtle upward floating drift like art dust
+          z: (Math.random() - 0.5) * 0.06
+        });
+      }
+
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('scale', new THREE.BufferAttribute(scales, 1));
+
+      const material = new THREE.PointsMaterial({
+        size: isDesktop ? 12 : 9,
+        map: createGoldGlowTexture(),
+        transparent: true,
+        opacity: 0.82,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+      });
+
+      const particleSystem = new THREE.Points(geometry, material);
+      scene.add(particleSystem);
+
+      // Interactive mouse parallax on desktop
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetMouseX = 0;
+      let targetMouseY = 0;
+
+      if (isDesktop) {
+        window.addEventListener('mousemove', (e) => {
+          targetMouseX = (e.clientX / window.innerWidth - 0.5) * 24;
+          targetMouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+        }, { passive: true });
+      }
+
+      // Resize handler
+      function onWindowResize() {
+        if (!heroSection) return;
+        const width = heroSection.offsetWidth;
+        const height = heroSection.offsetHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+      }
+      window.addEventListener('resize', onWindowResize, { passive: true });
+
+      // Viewport Optimization: PAUSE rendering when hero is scrolled out of view!
+      let isHeroVisible = true;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          isHeroVisible = entry.isIntersecting;
+        });
+      }, { threshold: 0.05 });
+      observer.observe(heroSection);
+
+      // Render Loop
+      let animId = null;
+      function animate() {
+        animId = requestAnimationFrame(animate);
+
+        // Skip calculations if hero is scrolled away (0% GPU footprint)
+        if (!isHeroVisible) return;
+
+        // Smooth camera drift toward mouse position
+        mouseX += (targetMouseX - mouseX) * 0.04;
+        mouseY += (targetMouseY - mouseY) * 0.04;
+        camera.position.x = mouseX;
+        camera.position.y = -mouseY;
+        camera.lookAt(scene.position);
+
+        // Gently animate each particle position
+        const posAttr = geometry.attributes.position;
+        const posArr = posAttr.array;
+
+        for (let i = 0; i < particleCount; i++) {
+          const idx = i * 3;
+          posArr[idx] += velocities[i].x;
+          posArr[idx + 1] += velocities[i].y;
+          posArr[idx + 2] += velocities[i].z;
+
+          // Wrap around top boundary
+          if (posArr[idx + 1] > 150) {
+            posArr[idx + 1] = -150;
+            posArr[idx] = (Math.random() - 0.5) * 450;
+          }
+        }
+        posAttr.needsUpdate = true;
+
+        particleSystem.rotation.y += 0.0006;
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
+    } catch (e) {
+      console.warn('Three.js hero background init skipped:', e);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     3. GSAP & SCROLLTRIGGER ENHANCEMENTS
+     -------------------------------------------------------------------------- */
+  function initGSAP() {
+    if (typeof gsap === 'undefined') return;
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+    }
+
+    // A. Animated Milestone Counters in Trust Strip (0 to 20+, 5,000+, 4.9★, 100%)
+    const statItems = document.querySelectorAll('.trust-strip .stat-item, .stats-grid .stat-item');
+    statItems.forEach((item) => {
+      const numEl = item.querySelector('.stat-number');
+      if (!numEl) return;
+
+      const rawText = numEl.textContent.trim();
+      let targetNum = 0;
+      let suffix = '';
+      let isFloat = false;
+
+      if (rawText.includes('20+')) {
+        targetNum = 20;
+        suffix = '+';
+      } else if (rawText.includes('5,000') || rawText.includes('5000')) {
+        targetNum = 5000;
+        suffix = '+';
+      } else if (rawText.includes('4.9')) {
+        targetNum = 4.9;
+        suffix = '★';
+        isFloat = true;
+      } else if (rawText.includes('100%')) {
+        targetNum = 100;
+        suffix = '%';
+      } else {
+        const match = rawText.match(/([0-9.,]+)(.*)/);
+        if (match) {
+          targetNum = parseFloat(match[1].replace(/,/g, '')) || 0;
+          suffix = match[2] || '';
+          isFloat = rawText.includes('.');
+        }
+      }
+
+      if (targetNum > 0 && typeof ScrollTrigger !== 'undefined') {
+        const counterObj = { val: 0 };
+        gsap.to(counterObj, {
+          val: targetNum,
+          duration: 2.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 88%',
+            toggleActions: 'play none none none'
+          },
+          onUpdate: function () {
+            if (isFloat) {
+              numEl.textContent = counterObj.val.toFixed(1) + suffix;
+            } else if (targetNum >= 1000) {
+              numEl.textContent = Math.floor(counterObj.val).toLocaleString() + suffix;
+            } else {
+              numEl.textContent = Math.floor(counterObj.val) + suffix;
+            }
+          }
+        });
+      }
+    });
+
+    if (typeof ScrollTrigger === 'undefined') return;
+
+    // B. Staggered Entrance Reveal for Discipline Cards
+    const disciplineGrid = document.querySelector('.disciplines-grid');
+    if (disciplineGrid) {
+      const cards = disciplineGrid.querySelectorAll('.discipline-card');
+      if (cards.length > 0) {
+        gsap.from(cards, {
+          y: 40,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: disciplineGrid,
+            start: 'top 82%',
+            toggleActions: 'play none none none'
+          }
+        });
+      }
+    }
+
+    // C. Section Header Refined Fade & Rise
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    sectionHeaders.forEach((hdr) => {
+      gsap.from(hdr, {
+        y: 28,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: hdr,
+          start: 'top 86%',
+          toggleActions: 'play none none none'
+        }
+      });
+    });
+
+    // D. Google Scoreboard & Reviews Stagger Reveal
+    const reviewsGrid = document.querySelector('.google-reviews-grid');
+    if (reviewsGrid) {
+      const rCards = reviewsGrid.querySelectorAll('.google-review-card');
+      if (rCards.length > 0) {
+        gsap.from(rCards, {
+          y: 35,
+          opacity: 0,
+          scale: 0.98,
+          duration: 0.75,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: reviewsGrid,
+            start: 'top 84%',
+            toggleActions: 'play none none none'
+          }
+        });
+      }
+    }
+
+    // E. Kala Chakra Visual Subtle Scroll Parallax on Desktop
+    const chakraWheel = document.querySelector('.kala-chakra-wheel, .chakra-disc-svg');
+    if (chakraWheel && isDesktop) {
+      gsap.to(chakraWheel, {
+        rotation: 35,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: chakraWheel,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.2
+        }
+      });
+    }
+
+    // F. Magnetic Cursor Feedback on Primary CTAs (Desktop Only)
+    if (isDesktop) {
+      const magneticButtons = document.querySelectorAll('.btn-primary, .slide-cta-group .btn-aarabhi-crimson');
+      magneticButtons.forEach((btn) => {
+        btn.addEventListener('mousemove', (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          gsap.to(btn, {
+            x: x * 0.22,
+            y: y * 0.22,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        btn.addEventListener('mouseleave', () => {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.5,
+            ease: 'elastic.out(1, 0.4)'
+          });
+        });
+      });
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     4. BOOTSTRAP WHEN DOM IS READY
+     -------------------------------------------------------------------------- */
+  function boot() {
+    initLenis();
+    initThreeHero();
+    initGSAP();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
