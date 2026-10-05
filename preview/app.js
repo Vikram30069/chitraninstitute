@@ -1106,28 +1106,28 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         "moduleNum": 5,
-        "stepName": "M5: Hindi Devanagari",
-        "title": "Script Precision: Hindi Devanagari Script Alignment & Shirorekha Geometry",
+        "stepName": "M5: Abacus & Vedic Math",
+        "title": "Cognitive Speed: Japanese Soroban Abacus, Mental Arithmetic & Vedic Maths",
         "duration": "1 - 2 Months",
-        "level": "Bilingual Penmanship / Hindi & Regional Script",
-        "certification": "Chitran Devanagari Script Precision Award",
-        "desc": "Dedicated mastery of Hindi Devanagari script. We cure tilted headlines, uneven matras, and distorted loops through mathematical baseline rules. Students master ruler-straight Shirorekha (top headline) drawing without lifting, proportionate Swar and Vyanjan letter balance, and flawless half-letter conjuncts for top marks in second-language board examinations.",
+        "level": "Brain Agility / Speed Calculation & Cognitive Skills",
+        "certification": "Chitran Certified Soroban Abacus & Vedic Math Diploma",
+        "desc": "Dual-hemisphere brain development program combining classical Japanese Soroban Abacus calculation with ancient Vedic speed math sutras. Students master 4-way bead visualization, rapid mental arithmetic (addition, subtraction, multiplication, division without paper or calculator), and mental math shortcuts to solve competitive school exam questions in seconds with 100% accuracy.",
         "techniques": [
-          "Straight-line Shirorekha (top headline) execution without hand wobble or break",
-          "Matra placement geometry: upper (ikār, e, ai), lower (u, ū, ri), and lateral vowel signs",
-          "Proportionate circular curvature for characters like 'क', 'व', 'ब', 'म', 'भ'",
-          "Baseline discipline ensuring neat, aligned sentences across ruled and plain sheets"
+          "Soroban bead manipulation mechanics with thumb and index finger precision",
+          "Anzan mental visualization: performing multi-digit sums in the mind's eye at lightning speed",
+          "Vedic math sutras: Ekadhikena Purvena, Nikhilam Navatashcaramam, and Anurupyena shortcuts",
+          "Multi-digit rapid multiplication, division, square roots, and percentages in seconds"
         ],
         "mediums": [
-          "Double-Ruled & Single-Ruled Devanagari Specialized Transformation Exercise Pads",
-          "Smooth-Flow Chisel-Tip & Micro-Tip German Fluid Gel Pens"
+          "Authentic 17-Rod Japanese Soroban Abacus Instrument",
+          "Timed Mental Arithmetic Workbooks & Vedic Math Exercise Sheets"
         ],
         "milestones": [
-          "Achieve 100% straight-line Shirorekha alignment across 2 full pages of Hindi composition",
-          "Eliminate all letter-merging and misplaced matra errors in timed test writing",
-          "Receive Chitran Devanagari Script Precision Merit Certification"
+          "Perform 10-row multi-digit additions mentally in under 30 seconds with 100% precision",
+          "Master rapid mental multiplication and division without pen or calculator",
+          "Receive Chitran Certified Soroban Abacus & Vedic Speed Math Diploma"
         ],
-        "waInquiryText": "Hello Chitran Institute! I would like to enroll in Handwriting Module 5 (Hindi Devanagari Script Alignment)."
+        "waInquiryText": "Hello Chitran Institute! I would like to enroll in Module 5 (Abacus, Speed Math & Vedic Maths)."
       },
       {
         "moduleNum": 6,
@@ -1653,7 +1653,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { icon: '⚡', title: 'Exam Speed Writing System', desc: 'Write 2x faster in competitive & board exams with 98% legibility retained' },
         { icon: '🖋️', title: 'Cursive Flow & 68° Italic Slant', desc: 'Flawless ligature connections, baseline adherence & elegant presentation' },
         { icon: '⚖️', title: 'Civil Services & UPSC Mains Bootcamp', desc: '3-Hour continuous writing endurance, unruled paper alignment & formatting' },
-        { icon: '📜', title: 'Hindi Devanagari Script Precision', desc: 'Straight-line Shirorekha discipline, matra placement & proportional curves' },
+        { icon: '🧮', title: 'Abacus, Speed Math & Vedic Maths', desc: 'Japanese Soroban bead calculation, lightning mental arithmetic & Vedic math shortcuts' },
         { icon: '✒️', title: 'Artistic Calligraphy & Lettering', desc: 'Chisel-nib pens, Gothic Blackletter, copperplate cursive & gold illumination' }
       ],
       quote: '100% transformation guaranteed in 1 month for school students, competitive aspirants & adults.',
@@ -1903,7 +1903,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Handwriting Improvement (1-Month)', category: 'Skill Mastery', icon: '✍️', target: 'card-handwriting', page: 'handwriting.html' },
     { name: '2x Speed Writing for UPSC & Exams', category: 'Skill Mastery', icon: '⚡', target: 'card-handwriting', page: 'handwriting.html' },
     { name: 'English Cursive & Print Script', category: 'Skill Mastery', icon: '🖋️', target: 'card-handwriting', page: 'handwriting.html' },
-    { name: 'Hindi Devanagari Script Precision', category: 'Skill Mastery', icon: '📜', target: 'card-handwriting', page: 'handwriting.html' },
+    { name: 'Abacus, Speed Math & Vedic Maths', category: 'Skill Mastery', icon: '🧮', target: 'card-handwriting', page: 'handwriting.html' },
     { name: 'Calligraphy & Lettering Mastery', category: 'Skill Mastery', icon: '✒️', target: 'card-handwriting', page: 'handwriting.html' }
   ];
 

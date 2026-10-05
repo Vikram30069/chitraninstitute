@@ -20,7 +20,7 @@ Poor handwriting and slow writing speed can severely impact a student’s academ
 
 ### Key Highlights
 - 📝 **Guaranteed Transformation** in 15–30 Session Modules
-- ✍️ **English (Print & Cursive) + Hindi (Devanagari)** Script Training
+- ✍️ **English (Print & Cursive) + Speed Writing Remediation**
 - 🧠 **8-Level Soroban Abacus** for 10x Mental Calculation Speed
 - 📍 **Central Ashok Nagar / Himayatnagar Campus** in Hyderabad
 
@@ -42,9 +42,9 @@ Poor handwriting and slow writing speed can severely impact a student’s academ
 - **Target Audience**: School students (Class 1 to 12), college students, competitive exam candidates, and adults.
 - **Dedicated Page Link**: `[ Learn More about Handwriting Classes → ]` (`/handwriting-improvement-classes-hyderabad/`)
 
-### B. Hindi Handwriting Improvement (Devanagari Script)
-- **Focus**: Shirorekha (top line) straightness, matra placement, letter proportions, and uniform baseline alignment.
-- **Dedicated Page Link**: `[ Learn More about Hindi Handwriting → ]` (`/handwriting-improvement-classes-hyderabad/`)
+### B. Timed Exam Speed Writing Remediation
+- **Focus**: Eliminating hand fatigue, increasing words-per-minute (WPM) by 2x for Board & UPSC exams while maintaining flawless legibility.
+- **Dedicated Page Link**: `[ Learn More about Speed Writing → ]` (`/handwriting-improvement-classes-hyderabad/`)
 
 ### C. Artistic Calligraphy & Lettering Classes
 - **Techniques**: Broad-edge nib calligraphy, Copperplate, Gothic/Blackletter, modern brush lettering, decorative borders, certificate writing, and creative journaling.

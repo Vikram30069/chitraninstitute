@@ -146,7 +146,7 @@
       new Typewriter(filterTyped, [
         'Fine Arts from basic sketching to oil realism',
         'Western staff notation & Trinity grade exams',
-        '2x exam writing speed & Devanagari precision',
+        '2x exam writing speed, Abacus & Vedic math',
         'Stage choreography & high-energy hip-hop'
       ], {
         typeSpeed: 65,

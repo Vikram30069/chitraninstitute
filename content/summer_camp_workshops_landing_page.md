@@ -47,7 +47,7 @@ graph TD
     Z1 --> Z1_sub["Drawing, Watercolors, Canvas Acrylics, 3D Glass Painting, Pot Painting, Clay Modeling & Fabric Art"]
     Z2 --> Z2_sub["Electronic Keyboard, Guitar Basics, Western Drumming, Octapad Beats & Devotional Slokas"]
     Z3 --> Z3_sub["Western Freestyle, Bollywood Choreography, Hip-Hop & High-Energy Kids Zumba"]
-    Z4 --> Z4_sub["Handwriting Remediation (English/Hindi), Modern Calligraphy, Abacus Speed Math & Vedic Arithmetic"]
+    Z4 --> Z4_sub["Handwriting Remediation (English Cursive & Print), Modern Calligraphy, Abacus Speed Math & Vedic Arithmetic"]
 ```
 
 ---
