@@ -9440,3 +9440,85 @@ section[id],
   font-size: 0.86rem;
   color: var(--aarabhi-gold);
 }
+
+/* ==========================================================================
+   FULL PACKAGE: SCROLL BLUR REVEAL & AMBIENT SHADOW MERGE ENHANCEMENTS
+   ========================================================================== */
+.achievement-card,
+.medium-card,
+.visual-banner-card,
+.why-wait-card,
+.camp-flagship-card,
+.step-card,
+.camp-zone-card {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Enhanced Sticky Nav Glassmorphic Shadow Merge */
+.main-header.scrolled {
+  background: rgba(7, 11, 20, 0.96) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(245, 192, 98, 0.3) !important;
+  box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.75), 0 0 24px rgba(245, 192, 98, 0.1) !important;
+}
+
+/* Dynamic Ambient Glow Shadow for Feature Cards */
+.visual-banner-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.4s ease;
+}
+
+.visual-banner-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 192, 98, 0.75) !important;
+  box-shadow: 0 30px 70px -12px rgba(245, 192, 98, 0.32), 0 0 40px rgba(245, 192, 98, 0.16) !important;
+}
+
+/* Photo Wrap Vignette Gradient Merge */
+.card-photo-wrap,
+.visual-banner-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-photo-wrap::after,
+.visual-banner-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 65%, rgba(7, 11, 20, 0.7) 100%);
+  transition: opacity 0.4s ease;
+}
+
+.medium-card:hover .card-photo-wrap::after,
+.visual-banner-card:hover .visual-banner-media::after {
+  opacity: 0.4;
+}
+
+/* Mobile Smooth Performance Safeguards */
+@media (max-width: 768px) {
+  .visual-banner-card:hover {
+    transform: none;
+  }
+}
+
+/* Accessibility: Respect Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  .achievement-card,
+  .medium-card,
+  .visual-banner-card,
+  .why-wait-card,
+  .camp-flagship-card,
+  .step-card,
+  .camp-zone-card,
+  .section-header * {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+

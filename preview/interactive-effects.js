@@ -353,15 +353,217 @@
         });
       });
     }
+  /* --------------------------------------------------------------------------
+     4. ATELIER SOFT-FOCUS BLUR REVEAL & SHADOW MERGE (FULL PACKAGE)
+     -------------------------------------------------------------------------- */
+  function initScrollBlurAndShadowMerge() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    // Respect user's accessibility reduced motion setting
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isMobileWidth = window.innerWidth < 768;
+    const isMobileMode = isTouch || isMobileWidth;
+
+    // A. STAGGERED SOFT-FOCUS BLUR-TO-SHARP CARD REVEALS
+    const gridContainers = [
+      '.achievements-grid',
+      '.medium-cards-grid',
+      '.camp-zones-grid',
+      '.drawing-types-grid',
+      '.testimonials-grid',
+      '.syllabus-path-grid',
+      '.stats-grid',
+      '.faculty-grid',
+      '.features-grid'
+    ];
+
+    gridContainers.forEach((selector) => {
+      const container = document.querySelector(selector);
+      if (!container) return;
+
+      const cards = container.children;
+      if (!cards || cards.length === 0) return;
+
+      const cardArray = Array.from(cards).filter((c) => c.nodeType === 1);
+      if (cardArray.length === 0) return;
+
+      // On desktop: rich optical 8px blur + 32px slide
+      // On mobile: light 2px blur + 18px slide for 60/120fps buttery smoothness
+      const initialBlur = isMobileMode ? 'blur(2px)' : 'blur(8px)';
+      const initialY = isMobileMode ? 18 : 32;
+      const staggerTime = isMobileMode ? 0.05 : 0.09;
+      const durationTime = isMobileMode ? 0.65 : 0.9;
+
+      gsap.fromTo(cardArray,
+        {
+          opacity: 0,
+          y: initialY,
+          filter: initialBlur
+        },
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: durationTime,
+          stagger: staggerTime,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: container,
+            start: isMobileMode ? 'top 92%' : 'top 86%',
+            toggleActions: 'play none none none',
+            once: true
+          },
+          clearProps: 'filter,will-change'
+        }
+      );
+    });
+
+    // B. STANDALONE CARDS (Not inside matched parent grids)
+    const standaloneCards = document.querySelectorAll(
+      '.achievement-card:not(.achievements-grid *), .medium-card:not(.medium-cards-grid *), .step-card:not(.syllabus-path-grid *)'
+    );
+    standaloneCards.forEach((card) => {
+      gsap.fromTo(card,
+        {
+          opacity: 0,
+          y: isMobileMode ? 18 : 30,
+          filter: isMobileMode ? 'blur(2px)' : 'blur(7px)'
+        },
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          duration: isMobileMode ? 0.65 : 0.85,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+            once: true
+          },
+          clearProps: 'filter,will-change'
+        }
+      );
+    });
+
+    // C. ROYAL AMBIENT SHADOW MERGE & GLOW BLOOM (Feature Banners & Key Conversion Cards)
+    const shadowMergeTargets = document.querySelectorAll(
+      '.visual-banner-card, .why-wait-card, .camp-flagship-card, .booking-form-card, .aarabhi-card'
+    );
+
+    shadowMergeTargets.forEach((card) => {
+      const targetShadow = isMobileMode
+        ? '0 12px 36px -6px rgba(245, 192, 98, 0.22), 0 0 20px rgba(245, 192, 98, 0.08)'
+        : '0 24px 60px -12px rgba(245, 192, 98, 0.28), 0 0 35px rgba(245, 192, 98, 0.12), 0 1px 0 rgba(253, 230, 138, 0.35) inset';
+
+      gsap.fromTo(card,
+        {
+          opacity: 0,
+          y: isMobileMode ? 20 : 36,
+          filter: isMobileMode ? 'none' : 'blur(6px)',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)'
+        },
+        {
+          opacity: 1,
+          y: 0,
+          filter: 'blur(0px)',
+          boxShadow: targetShadow,
+          duration: isMobileMode ? 0.75 : 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true
+          },
+          clearProps: 'filter,will-change'
+        }
+      );
+    });
+
+    // D. CINEMATIC VIGNETTE IMAGE FOCUS & SUBTLE SCALE SETTLING
+    const mediaImages = document.querySelectorAll(
+      '.visual-banner-media img, .card-photo-wrap img, .cta-booking-img, .pointing-student-img'
+    );
+    mediaImages.forEach((img) => {
+      gsap.fromTo(img,
+        {
+          scale: 1.05,
+          filter: 'brightness(0.92)'
+        },
+        {
+          scale: 1.0,
+          filter: 'brightness(1.0)',
+          duration: 1.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: img.parentElement || img,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+            once: true
+          },
+          clearProps: 'will-change'
+        }
+      );
+    });
+
+    // E. SECTION HEADERS & ACCENT BADGES
+    const sectionHeaders = document.querySelectorAll('.section-header, .visual-banner-content');
+    sectionHeaders.forEach((header) => {
+      const heading = header.querySelector('h2, h3, .visual-banner-title');
+      const text = header.querySelector('p, .visual-banner-desc');
+      const badge = header.querySelector('.section-tag, .camp-annual-badge, .filter-badge');
+
+      const elements = [badge, heading, text].filter(Boolean);
+      if (elements.length > 0) {
+        gsap.fromTo(elements,
+          {
+            opacity: 0,
+            y: isMobileMode ? 14 : 22,
+            filter: isMobileMode ? 'none' : 'blur(4px)'
+          },
+          {
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            duration: 0.8,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: header,
+              start: 'top 88%',
+              toggleActions: 'play none none none',
+              once: true
+            },
+            clearProps: 'filter,will-change'
+          }
+        );
+      }
+    });
+
+    // F. HEADER NAVBAR SHADOW MERGE ON SCROLL
+    const header = document.querySelector('.main-header, .site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 35) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }, { passive: true });
+    }
   }
 
   /* --------------------------------------------------------------------------
-     4. BOOTSTRAP WHEN DOM IS READY
+     5. BOOTSTRAP WHEN DOM IS READY
      -------------------------------------------------------------------------- */
   function boot() {
     initLenis();
     initThreeHero();
     initGSAP();
+    initScrollBlurAndShadowMerge();
   }
 
   if (document.readyState === 'loading') {
