@@ -37,16 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // On mobile, tap on dropdown trigger toggles dropdown accordion without closing menu
+    // On mobile, tap on dropdown trigger toggles dropdown accordion; if already open, allow direct navigation
     document.querySelectorAll('.nav-item-dropdown .dropdown-trigger').forEach(trigger => {
       trigger.addEventListener('click', (e) => {
         if (window.innerWidth <= 1024) {
+          const parent = trigger.closest('.nav-item-dropdown');
+          const isOpen = parent && parent.classList.contains('mobile-dropdown-open');
+          if (isOpen) {
+            // Already expanded: let user navigate directly to href
+            return;
+          }
           e.preventDefault();
           e.stopPropagation();
-          const parent = trigger.closest('.nav-item-dropdown');
-          const isOpen = parent.classList.contains('mobile-dropdown-open');
           document.querySelectorAll('.nav-item-dropdown').forEach(d => d.classList.remove('mobile-dropdown-open'));
-          if (!isOpen) {
+          if (parent) {
             parent.classList.add('mobile-dropdown-open');
           }
         }
@@ -1807,25 +1811,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Global redirection function called from navbar, hero, or quick inquiry
   window.goToDiscipline = function (disciplineKey, shouldScroll = true) {
+    const syllabusEl = document.getElementById('the-syllabus');
+    if (!syllabusEl) {
+      if (disciplineKey === 'drawing') window.location.href = 'drawing.html';
+      else if (disciplineKey === 'music') window.location.href = 'music.html';
+      else if (disciplineKey === 'dance') window.location.href = 'dance.html';
+      else if (disciplineKey === 'handwriting') window.location.href = 'handwriting.html';
+      else window.location.href = 'index.html';
+      return;
+    }
+
     // 1. Update Kala Chakra wheel & details panel
-    renderChakraDetails(disciplineKey);
+    if (typeof renderChakraDetails === 'function') {
+      renderChakraDetails(disciplineKey);
+    }
 
     // 2. Switch the 8-Module Syllabus to this discipline
-    switchSyllabusDiscipline(disciplineKey);
+    if (typeof switchSyllabusDiscipline === 'function') {
+      switchSyllabusDiscipline(disciplineKey);
+    }
 
     // 3. Smoothly scroll to the syllabus section with exact header offset
     if (shouldScroll) {
-      const syllabusEl = document.getElementById('the-syllabus');
-      if (syllabusEl) {
-        const headerOffset = 96;
-        const elementPosition = syllabusEl.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      const headerOffset = 96;
+      const elementPosition = syllabusEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
 
       // Also gently highlight the corresponding card below
       const targetCard = document.getElementById(`card-${disciplineKey}`);
